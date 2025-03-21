@@ -89,6 +89,9 @@ public static class PrimeGenerator
                         {
                             printedCount++;
                             Console.WriteLine($"{printedCount}: {candidate}");
+                            if (!(printedCount == count))
+                                Console.WriteLine();
+
                             if (printedCount >= count)
                                 cts.Cancel();
                         }

@@ -1,0 +1,15 @@
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/bin/x86_64/Debug/net8.0/NumGen
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/bin/x86_64/Debug/net8.0/NumGen.deps.json
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/bin/x86_64/Debug/net8.0/NumGen.runtimeconfig.json
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/bin/x86_64/Debug/net8.0/NumGen.dll
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/bin/x86_64/Debug/net8.0/NumGen.pdb
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/NumGen.GeneratedMSBuildEditorConfig.editorconfig
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/NumGen.AssemblyInfoInputs.cache
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/NumGen.AssemblyInfo.cs
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/NumGen.csproj.CoreCompileInputs.cache
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/NumGen.sourcelink.json
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/NumGen.dll
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/refint/NumGen.dll
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/NumGen.pdb
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/NumGen.genruntimeconfig.cache
+/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/x86_64/Debug/net8.0/ref/NumGen.dll
