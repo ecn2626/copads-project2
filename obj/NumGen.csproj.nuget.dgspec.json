@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/NumGen.csproj": {}
+    "C:\\Users\\eric7\\COPADS\\Project2\\NumGen\\NumGen.csproj": {}
   },
   "projects": {
-    "/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/NumGen.csproj": {
+    "C:\\Users\\eric7\\COPADS\\Project2\\NumGen\\NumGen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/NumGen.csproj",
+        "projectUniqueName": "C:\\Users\\eric7\\COPADS\\Project2\\NumGen\\NumGen.csproj",
         "projectName": "NumGen",
-        "projectPath": "/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/NumGen.csproj",
-        "packagesPath": "/home/stu1/s11/ecn2626/.nuget/packages/",
-        "outputPath": "/home/stu1/s11/ecn2626/Courses/COPADS/copads-project2/obj/",
+        "projectPath": "C:\\Users\\eric7\\COPADS\\Project2\\NumGen\\NumGen.csproj",
+        "packagesPath": "C:\\Users\\eric7\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eric7\\COPADS\\Project2\\NumGen\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/stu1/s11/ecn2626/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\eric7\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -58,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

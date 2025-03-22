@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NumGen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+391d9c93af7ccaef90f466f39dac3e5217dd3c75")]
 [assembly: System.Reflection.AssemblyProductAttribute("NumGen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NumGen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

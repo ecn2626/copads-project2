@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Author: Eric Noga
+//COPADS PROJECT 2
+//
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
