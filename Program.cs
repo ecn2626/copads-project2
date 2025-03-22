@@ -13,7 +13,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Validate that there are 2 or 3 arguments.
+        // should be 2 or 3 arguments.
         if (args.Length < 2 || args.Length > 3)
         {
             Console.WriteLine("Usage: dotnet run <bits> <option> <count>");
@@ -53,16 +53,16 @@ class Program
 
 public static class PrimeGenerator
 {
-    // Shared lock object for thread-safe printing and updating the shared counter.
+    //lock object that is shared for thread-safe printing and updating the shared counter
     private static readonly object lockObj = new();
 
     /// <summary>
-    /// Generates the specified count of prime numbers using Task-based parallelism.
+    /// Generates the specified count of prime numbers using tasks
     /// </summary>
     public static void GeneratePrimes(int bitLength, int count)
     {
         int printedCount = 0;
-        // Create a fixed number of worker tasks (using twice the number of processors).
+        // create fixed number of worker tasks using double the processor count
         int numThreads = Environment.ProcessorCount * 2;
         CancellationTokenSource cts = new CancellationTokenSource();
         CancellationToken token = cts.Token;
@@ -72,12 +72,12 @@ public static class PrimeGenerator
         {
             tasks.Add(Task.Run(() =>
             {
-                // Continuously generate candidates until cancellation is requested.
+                // Continuously generate candidates until cancellation is requested
                 while (!token.IsCancellationRequested)
                 {
                     BigInteger candidate = GenerateRandomOddBigInteger(bitLength);
 
-                    // Generate candidates until one passes the Miller-Rabin test.
+                    // Generate candidates until one passes the miller rabin test
                     while (!candidate.IsProbablyPrime())
                     {
                         if (token.IsCancellationRequested)
@@ -85,7 +85,7 @@ public static class PrimeGenerator
                         candidate = GenerateRandomOddBigInteger(bitLength);
                     }
 
-                    // Safely update the shared counter and print the candidate.
+                    // Safely update the shared counter and print the candidate
                     lock (lockObj)
                     {
                         if (printedCount < count)
@@ -103,7 +103,7 @@ public static class PrimeGenerator
             }, token));
         }
 
-        // Wait for all tasks to complete. Ignore TaskCanceledExceptions.
+        // Wait for all tasks to complete, ignore TaskCanceledExceptions
         try
         {
             Task.WaitAll(tasks.ToArray());
@@ -115,38 +115,38 @@ public static class PrimeGenerator
     }
 
     /// <summary>
-    /// Generates a random BigInteger of the specified bit length.
-    /// Sets the highest bit to ensure the number is in the full bit-length range.
+    /// Generates a random BigInteger of the specified bit length
+    /// Sets the highest bit to ensure the number is in the full bit length range
     /// </summary>
     public static BigInteger GenerateRandomBigInteger(int bitLength)
     {
         int byteLength = bitLength / 8;
         byte[] bytes = new byte[byteLength];
         RandomNumberGenerator.Fill(bytes);
-        // Set the highest bit.
+        // Set highest bit
         bytes[bytes.Length - 1] |= 0x80;
         return BigInteger.Abs(new BigInteger(bytes));
     }
 
     /// <summary>
-    /// Generates a random odd BigInteger of the specified bit length.
-    /// Ensures both the highest bit (for the correct bit-length) and the lowest bit (for oddness) are set.
+    /// Generates a random odd BigInteger of the specified bit length
+    /// Ensures both the highest bit and the lowest bit are set.
     /// </summary>
     public static BigInteger GenerateRandomOddBigInteger(int bitLength)
     {
         int byteLength = bitLength / 8;
         byte[] bytes = new byte[byteLength];
         RandomNumberGenerator.Fill(bytes);
-        // Set the highest bit.
+        // Set the highest bit
         bytes[bytes.Length - 1] |= 0x80;
-        // Set the lowest bit so that the number is odd.
+        // Set the lowest bit so that the number is odd
         bytes[0] |= 1;
         return BigInteger.Abs(new BigInteger(bytes));
     }
 
     /// <summary>
-    /// Miller-Rabin Primality Test extension method.
-    /// Returns true if the value is probably prime, false otherwise.
+    /// Miller-Rabin Primality Test extension method
+    /// Returns true if the value is probably prime, false otherwise
     /// </summary>
     public static bool IsProbablyPrime(this BigInteger value, int k = 10)
     {
@@ -157,7 +157,7 @@ public static class PrimeGenerator
         if (value % 2 == 0)
             return false;
 
-        // Quick trial division using small primes.
+        //trial division using some small primes, helps to speed things up
         int[] smallPrimes = { 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 };
         foreach (int prime in smallPrimes)
         {
@@ -167,7 +167,7 @@ public static class PrimeGenerator
                 return false;
         }
 
-        // Write value-1 as 2^s * d with d odd.
+        // Write value-1 as 2^s * d with d odd
         BigInteger d = value - 1;
         int s = 0;
         while (d % 2 == 0)
@@ -176,7 +176,7 @@ public static class PrimeGenerator
             s++;
         }
 
-        // Perform k rounds of testing.
+        // k rounds of tests
         for (int i = 0; i < k; i++)
         {
             BigInteger a = GenerateRandomBase(value);
@@ -201,7 +201,7 @@ public static class PrimeGenerator
     }
 
     /// <summary>
-    /// Generates a random base 'a' in the range [2, value - 2] for use in the Miller-Rabin test.
+    /// Generates a random base in the range [2, value - 2] for use in the miller rabin test
     /// </summary>
     private static BigInteger GenerateRandomBase(BigInteger value)
     {
@@ -215,7 +215,7 @@ public static class PrimeGenerator
 public static class OddNumberGenerator
 {
     /// <summary>
-    /// Generates the specified count of random odd numbers, computes their factor counts, and prints the results.
+    /// Generates the specified count of random odd numbers, computes their factor counts, and prints the results
     /// </summary>
     public static void GenerateOddNumbers(int bitLength, int count)
     {
@@ -231,8 +231,8 @@ public static class OddNumberGenerator
     }
 
     /// <summary>
-    /// Generates a random odd BigInteger of the specified bit length.
-    /// Ensures that the highest bit is set and that the number is odd.
+    /// Generates a random odd BigInteger of the specified bit length
+    /// Ensures that the highest bit is set and that the number is odd
     /// </summary>
     public static BigInteger GenerateRandomOddBigInteger(int bitLength)
     {
@@ -245,7 +245,7 @@ public static class OddNumberGenerator
     }
 
     /// <summary>
-    /// Counts the number of factors of the given odd number by checking only odd divisors.
+    /// Counts the number of factors of the given odd number by checking only odd divisors
     /// </summary>
     private static int CountFactors(BigInteger number)
     {
